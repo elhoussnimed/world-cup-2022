@@ -10,7 +10,6 @@ async function getMatches() {
         "X-Auth-Token": apiToken,
       },
       redirect: "follow",
-      mode: "no-cors",
     };
 
     const response = await fetch(apiUrl, requestOptions);
