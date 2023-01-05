@@ -6,8 +6,11 @@ async function getGroups() {
   try {
     const requestOption = {
       headers: {
+        method: "GET",
         "X-Auth-Token": apiToken,
       },
+      redirect: "follow",
+      mode: "no-cors",
     };
 
     const response = await fetch(apiUrl, requestOption);
