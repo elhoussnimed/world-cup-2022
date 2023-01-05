@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2022</title>
+    <!--================================= style files  =================================-->
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- map  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- app style  -->
+    <link rel="stylesheet" href="./assets/css/matches.css">
+    <!--================================= script files =================================-->
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        defer></script>
+    <!-- map -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- app script  -->
+    <script src="./assets/script/matches.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg py-2">
+        <div class="container-fluid container-md">
+            <a class="navbar-brand logo" href="index.html">
+                <img src="./assets/imgs/logo.png" class="img-fluid" alt="">
+                <img src="./assets/imgs/qatar-word.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav links">
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" aria-current="page" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize active" aria-current="page"
+                            href="matches.html">matches</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" href="team.html">team</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" href="groups.html">groups</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="matches">
+        <h2 class="matches-title text-center text-capitalize mb-5 py-4">world cup 2022 <br> matches</h2>
+        <div
+            class="matches-filter container-fluid container-md mb-5 p-2 d-flex justify-content-center align-items-center flex-column flex-md-row gap-1">
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2 active"
+                data-round="all">all</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2"
+                data-round="GROUP_STAGE">group</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2" data-round="LAST_16">
+                round of 16</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2"
+                data-round="QUARTER_FINALS">quarter finals</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2"
+                data-round="SEMI_FINALS">semi finals</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2" data-round="BRONZE">
+                bronze</div>
+            <div class="filter p-2 w-100 text-center text-capitalize position-relative rounded-2" data-round="FINAL">
+                final</div>
+        </div>
+        <div class="matches-list container-fluid container-md d-flex justify-content-center py-2 flex-wrap gap-2"></div>
+    </section>
+</body>
+
+</html>

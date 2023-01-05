@@ -1,0 +1,320 @@
+@font-face {
+    font-family: "qatar2022";
+    src: url(../fonts/Qatar2022Arabic-Heavy.ttf);
+}
+
+:root {
+    --primary-color: #56042C;
+    --secondary-color: #FEC310;
+
+}
+
+body {
+    font-family: "qatar2022", Arial, Helvetica, sans-serif;
+}
+
+/* start navbar  */
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar-toggler i {
+    color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.logo img:nth-child(1) {
+    height: 50px;
+    rotate: -15deg;
+    cursor: pointer;
+}
+
+.logo img:nth-child(2) {
+    cursor: pointer;
+    width: 100px;
+}
+
+.links .nav-item .nav-link {
+    color: white;
+}
+
+.links .nav-item .nav-link.active,
+.links .nav-item .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* end navbar  */
+/* start hero  */
+.hero {
+    background: url(../imgs/pattern.png);
+    background-color: var(--primary-color);
+    background-blend-mode: multiply;
+}
+
+.hero .world-cup-logo {
+    overflow-y: hidden;
+}
+
+.hero .world-cup-logo .logo {
+    height: 340px;
+    position: relative;
+}
+
+.hero .world-cup-logo .word {
+    max-width: 60%;
+    position: relative;
+}
+
+.hero .hero-text {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .hero .world-cup-logo .logo {
+        height: 250px;
+    }
+
+    .hero .world-cup-logo .word {
+        max-width: 100%;
+    }
+}
+
+/* end hero  */
+/* start stadiums section  */
+.map {
+    height: 400px;
+}
+
+.stadiums {
+    background-color: var(--secondary-color);
+    height: 100vh;
+}
+
+.stadiums-title {
+    color: var(--primary-color);
+}
+
+.carousel .carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.carousel .carousel-indicators button.active {
+    background-color: var(--secondary-color);
+}
+
+.carousel .carousel-inner .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    translate: -50%;
+    right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    z-index: 2;
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    color: var(--secondary-color);
+}
+
+@media (min-width: 769px) {
+    .carousel {
+        height: 80vh !important;
+    }
+
+    .map {
+        height: 80vh !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel .carousel-indicators button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel .carousel-inner .carousel-item .carousel-caption {
+        bottom: 20%;
+    }
+
+    .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel {
+        height: 35vh !important;
+        width: 100% !important;
+    }
+
+    .map {
+        height: 50vh !important;
+        width: 100% !important;
+    }
+}
+
+/* end stadiums section  */
+/* start winners section  */
+.winners {
+    height: 100vh;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.winners h2 {
+    color: var(--secondary-color);
+    position: absolute;
+    top: 25px;
+}
+
+.winners .winners-container {
+    bottom: 25px;
+}
+
+.winners .winners-container .winner {
+    width: 220px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    position: relative;
+    opacity: 0;
+    scale: 0;
+    bottom: -50%;
+}
+
+.winners .winners-container .winner img {
+    top: -190px;
+    left: 50%;
+    translate: -50%;
+    width: 150px;
+    height: 150px;
+}
+
+.winners .winners-container .winner h5 {
+    top: -40px;
+    color: var(--secondary-color);
+}
+
+.winners .winners-container .first {
+    height: 400px;
+}
+
+.winners .winners-container .first {
+    height: 400px;
+}
+
+.winners .winners-container .second {
+    height: 300px;
+}
+
+.winners .winners-container .third {
+    height: 200px;
+}
+
+.winners .winners-container .fourth {
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .winners-container {
+        align-items: flex-start !important;
+        bottom: 50% !important;
+        transform: translateY(50%);
+    }
+
+    .winners .winners-container .first {
+        height: 50px;
+        width: 85%;
+    }
+
+    .winners .winners-container .first img {
+        left: 120%;
+    }
+
+    .winners .winners-container .second {
+        height: 50px;
+        width: 75%;
+    }
+
+    .winners .winners-container .second img {
+        left: 125%;
+    }
+
+    .winners .winners-container .third {
+        height: 50px;
+        width: 65%;
+    }
+
+    .winners .winners-container .third img {
+        left: 130%;
+    }
+
+    .winners .winners-container .fourth {
+        height: 50px;
+        width: 55%;
+    }
+
+    .winners .winners-container .fourth img {
+        left: 135%;
+    }
+
+    .winners .winners-container .winner img {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        translate: -50% -50%;
+    }
+
+    .winners .winners-container .winner h5 {
+        top: 65%;
+        color: white;
+    }
+}
+
+/* end winners section  */
+/* start scorers section  */
+.scorers {
+    background-color: var(--secondary-color);
+}
+
+.scorers h2 {
+    color: var(--primary-color);
+}
+
+.scorers .players .player {
+    position: relative;
+    width: 300px;
+    bottom: -100%;
+    opacity: 0;
+}
+
+.scorers .players .player .player-img {
+    height: 250px;
+}
+
+.scorers .players .player .player-img img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.scorers .players .player .player-infos {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.scorers .players .player .player-infos .player-name {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* end scorers section  */

@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "qatar2022";
+    src: url(../fonts/Qatar2022Arabic-Heavy.ttf);
+}
+
+:root {
+    --primary-color: #56042C;
+    --secondary-color: #FEC310;
+
+}
+
+body {
+    font-family: "qatar2022", Arial, Helvetica, sans-serif;
+}
+
+/* start navbar  */
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar-toggler i {
+    color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.logo img:nth-child(1) {
+    height: 50px;
+    rotate: -15deg;
+    cursor: pointer;
+}
+
+.logo img:nth-child(2) {
+    cursor: pointer;
+    width: 100px;
+}
+
+.links .nav-item .nav-link {
+    color: white;
+}
+
+.links .nav-item .nav-link.active,
+.links .nav-item .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* end navbar  */
+/* start groups section  */
+.groups {
+    background-color: var(--primary-color);
+    min-height: 90vh;
+}
+
+.groups .groups-title {
+    color: var(--secondary-color);
+}
+
+.groups .group {
+    border-color: var(--secondary-color) !important;
+    border-radius: 10px;
+}
+
+.groups .group .group-name {
+    color: var(--secondary-color);
+}
+
+.groups .group .group-head .team-name,
+.groups .group .team .team-name {
+    width: 100px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.groups .group .team .team-name img {
+    width: 30px;
+}
+
+.groups .group .group-head p:not(.team-name),
+.groups .group .team p:not(.team-name) {
+    width: 45px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+
+    .groups .group .group-head .team-name,
+    .groups .group .team .team-name {
+        width: 75px;
+        font-size: 14px;
+    }
+
+    .groups .group .team .team-name img {
+        width: 20px;
+    }
+}
+
+/* end groups section  */

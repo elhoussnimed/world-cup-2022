@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "qatar2022";
+    src: url(../fonts/Qatar2022Arabic-Heavy.ttf);
+}
+
+:root {
+    --primary-color: #56042C;
+    --secondary-color: #FEC310;
+
+}
+
+body {
+    font-family: "qatar2022", Arial, Helvetica, sans-serif;
+}
+
+/* start navbar  */
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar-toggler i {
+    color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.logo img:nth-child(1) {
+    height: 50px;
+    rotate: -15deg;
+    cursor: pointer;
+}
+
+.logo img:nth-child(2) {
+    cursor: pointer;
+    width: 100px;
+}
+
+.links .nav-item .nav-link {
+    color: white;
+}
+
+.links .nav-item .nav-link.active,
+.links .nav-item .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* end navbar  */
+/* start teams section  */
+.teams {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.teams .team {
+    max-width: 300px;
+}
+
+.teams .team .team-img img {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.teams .team .team-infos {
+    background-color: #eee;
+    color: var(--primary-color);
+    height: 240px;
+}
+
+.teams .team .team-infos>div p:first-of-type {
+    width: 30%;
+}
+
+/* end teams section  */

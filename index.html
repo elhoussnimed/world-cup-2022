@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2022</title>
+    <!--================================= style files  =================================-->
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- map  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- app style  -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <!--================================= script files =================================-->
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        defer></script>
+    <!-- map -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- app script  -->
+    <script src="./assets/script/index.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg py-2">
+        <div class="container-fluid container-md">
+            <a class="navbar-brand logo" href="index.html">
+                <img src="./assets/imgs/logo.png" class="img-fluid" alt="">
+                <img src="./assets/imgs/qatar-word.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav links">
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize active" aria-current="page"
+                            href="index.html">home</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" aria-current="page" href="matches.html">matches</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" href="team.html">team</a>
+                    </li>
+                    <li class="nav-item text-center text-md-start px-3">
+                        <a class="nav-link fw-bold text-capitalize" href="groups.html">groups</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class=" hero d-flex flex-column justify-content-center align-items-start py-5">
+        <div class="container">
+            <div class="world-cup-logo d-flex justify-content-center flex-column align-items-center">
+                <img src="./assets/imgs/logo.png" class="logo mb-3 mb-md-0" alt="">
+                <img src="./assets/imgs/qatar-word.png" class="word" alt="">
+            </div>
+            <h1 class="text-center text-capitalize hero-text">welcome to qatar</h1>
+        </div>
+    </main>
+    <!-- *************************************** start stadiums caroussel************************************* -->
+    <section class="stadiums pt-4 pb-5 pb-md-0">
+        <h2 class="stadiums-title mb-3 text-uppercase text-center fs-1">stadiums</h2>
+        <div class="d-flex flex-column flex-md-row">
+            <div id="stadiums-carousel" class="carousel slide w-75" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="6"
+                        aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#stadiums-carousel" data-bs-slide-to="7"
+                        aria-label="Slide 8"></button>
+                </div>
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item h-100 active">
+                        <img src="./assets/imgs/stadiums/lusail-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">lusail stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 80.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/974-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">stadium 974</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/ahmed-bin-ali-stadium.jpeg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">ahmad bin ali stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/albayt-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">al bayt stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 60.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/aljanoub-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">al janoub stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/althumama-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">al thumama stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/education-city-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">education city stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./assets/imgs/stadiums/khalifa-international-stadium.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <h5 class="text-capitalize">khalifa international stadium</h5>
+                            <p class="d-none d-md-block text-capitalize">capacity: 40.000 seats</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#stadiums-carousel"
+                    data-bs-slide="prev">
+                    <i class="fa-solid fa-circle-chevron-left fs-3"></i>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#stadiums-carousel"
+                    data-bs-slide="next">
+                    <i class="fa-solid fa-circle-chevron-right fs-3"></i>
+                </button>
+            </div>
+            <div id="map" class="map w-25 "></div>
+        </div>
+    </section>
+    <!-- *************************************** end stadiums caroussel************************************* -->
+    <!-- *************************************** start winners section************************************* -->
+    <section class="winners py-4 d-flex flex-column justify-content-center align-items-center">
+        <h2 class="mb-5 text-uppercase fs-1">winners</h2>
+        <div
+            class="winners-container w-75 d-flex flex-column flex-md-row justify-content-center align-items-end position-absolute gap-3">
+            <div class="winner first position-relative d-flex justify-content-center align-items-center p-5 order-md-2">
+                <span class="d-block fs-1">
+                    1st
+                </span>
+                <img src="./assets/imgs/argentina.png" class="d-block position-absolute" alt="">
+                <h5 class="position-absolute text-capitalize fs-2">argentina</h5>
+            </div>
+            <div
+                class="winner second position-relative d-flex justify-content-center align-items-center p-5 order-md-1 opa">
+                <span class="d-block fs-1">
+                    2nd
+                </span>
+                <img src="./assets/imgs/france.png" class="d-block position-absolute" alt="">
+                <h5 class="position-absolute text-capitalize fs-2">france</h5>
+            </div>
+            <div class="winner third position-relative d-flex justify-content-center align-items-center p-5 order-md-3">
+                <span class="d-block fs-1">
+                    3rd
+                </span>
+                <img src="./assets/imgs/croatia.png" class="d-block position-absolute" alt="">
+                <h5 class="position-absolute text-capitalize fs-2">croatia</h5>
+            </div>
+            <div
+                class="winner fourth position-relative d-flex justify-content-center align-items-center p-5 order-md-0">
+                <span class="d-block fs-1">
+                    4th
+                </span>
+                <img src="./assets/imgs/morocco.png" class="d-block position-absolute" alt="">
+                <h5 class="position-absolute text-capitalize fs-2">morocco</h5>
+            </div>
+        </div>
+    </section>
+    <!-- *************************************** end winners section************************************* -->
+    <!-- *************************************** start scorers section*********************************** -->
+    <section class="scorers h-100 py-5">
+        <h2 class="scorers-title text-center fs-1 mb-5 text-capitalize">top goal scorers</h2>
+        <div class="players container d-flex justify-content-center gap-4 flex-wrap"></div>
+    </section>
+    <!-- *************************************** end scorers section************************************* -->
+
+</body>
+
+</html>
