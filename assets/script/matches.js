@@ -8,7 +8,7 @@ async function getMatches() {
       method: "GET",
       headers: {
         "X-Auth-Token": apiToken,
-        "Access-Control-Allow-Origin": "https://elhoussnimed.github.io/world-cup-2022/matches.html",
+        "Access-Control-Allow-Origin": "https://elhoussnimed.github.io",
       },
       redirect: "follow",
     };
