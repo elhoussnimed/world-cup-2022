@@ -8,6 +8,7 @@ async function getMatches() {
       method: "GET",
       headers: {
         "X-Auth-Token": apiToken,
+        "Access-Control-Allow-Origin": "https://api.football-data.org/v4/competitions/2000/matches",
       },
       redirect: "follow",
     };
