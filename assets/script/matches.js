@@ -1,72 +1,61 @@
-const apiToken = "54749a0b749540f1b2fe2f49f0121674";
-const apiUrl = "https://api.football-data.org/v4/competitions/2000/matches";
+const apiToken = "71a79fd775b0727d7373c87fee9da21c";
+const apiUrl = "https://v3.football.api-sports.io/";
 const matchesContainer = document.querySelector(".matches .matches-list");
 
 async function getMatches() {
   try {
+    const requestHeaders = {
+      "X-RapidAPI-Key": apiToken,
+      "X-RapidAPI-Host": apiUrl,
+    };
+
     const requestOptions = {
       method: "GET",
-      headers: {
-        "X-Auth-Token": apiToken,
-        "Access-Control-Allow-Origin": "https://elhoussnimed.github.io/world-cup-2022/matches.html",
-      },
+      headers: requestHeaders,
       redirect: "follow",
     };
 
-    const response = await fetch(apiUrl, requestOptions);
+    const response = await fetch(
+      `${apiUrl}fixtures?league=1&season=2022`,
+      requestOptions
+    );
     const data = await response.json();
-    const matches = data.matches;
+    const matches = data.response;
 
     matchesContainer.innerHTML = "";
 
     matches.forEach((match) => {
       const {
-        awayTeam: { crest: awayTeamLogo, name: awayTeamName },
-        homeTeam: { crest: homeTeamLogo, name: homeTeamName },
-        score,
-        stage,
-        utcDate,
+        fixture: {
+          date,
+          venue: { name: stadiumName },
+        },
+        league: { round },
+        score: {
+          fulltime: { home: fullTimeHome, away: fullTimeAway },
+          extratime: { home: extraTimeHome, away: extraTimeAway },
+          penalty: { home: penaltyHome, away: penaltyAway },
+        },
+        teams: {
+          home: { name: homeTeamName, logo: homeTeamLogo },
+          away: { name: awayTeamName, logo: awayTeamLogo },
+        },
       } = match;
 
-      const { duration } = score;
-      let fullTimeResult;
-      let extraTimeResult;
-      let penaltiesResult;
-
-      if (duration === "REGULAR") {
-        const {
-          fullTime: { home: fullTimeHome, away: fullTimeAway },
-        } = score;
-        fullTimeResult = `${fullTimeHome}-${fullTimeAway}`;
-        extraTimeResult = "---";
-        penaltiesResult = "---";
-      } else if (duration === "PENALTY_SHOOTOUT") {
-        const {
-          regularTime: { home: regularTimeHome, away: regularTimeAway },
-        } = score;
-        const {
-          extraTime: { home: extraTimeHome, away: extraTimeAway },
-        } = score;
-        const {
-          penalties: { home: penaltiesHome, away: penaltiesAway },
-        } = score;
-        fullTimeResult = `${regularTimeHome}-${regularTimeAway}`;
-        extraTimeResult = `${extraTimeHome}-${extraTimeAway}`;
-        penaltiesResult = `${penaltiesHome}-${penaltiesAway}`;
-      }
-
       // get the match time
-      let hour = new Date(utcDate).getHours();
-      let minute = new Date(utcDate).getMinutes();
+      let hour = new Date(date).getHours();
+      let minute = new Date(date).getMinutes();
       if (hour < 10) {
         hour = `0${hour}`;
       }
       if (minute < 10) {
         minute = `0${minute}`;
       }
-      let matchTime = `${new Date(utcDate).getDate() + 1}/${
-        new Date(utcDate).getMonth() + 1
-      }/${new Date(utcDate).getFullYear()}_${hour}:${minute}`;
+      let matchTime = `${new Date(date).getDate() + 1}/${
+        new Date(date).getMonth() + 1
+      }/${new Date(date).getFullYear()}_${hour}:${minute}`;
+
+      let stage = round.split(" ").slice(0, 1);
 
       const matchInfo = `
         <div class="match p-2 rounded-2" data-round=${stage}>
@@ -77,7 +66,7 @@ async function getMatches() {
                 </div>
                 <p>${homeTeamName}</p>
             </div>
-          <div class="result-fulltime fs-3 text-light">${fullTimeResult}</div>
+          <div class="result-fulltime fs-3 text-light">${fullTimeHome}-${fullTimeAway}</div>
             <div class="team-2 text-center">
                 <div class="team-2-flag">
                     <img src="${awayTeamLogo}" class="w-100 h-100" alt="">
@@ -87,15 +76,20 @@ async function getMatches() {
           </div>
           <div class="result-extratime text-center text-capitalize">
             <p class="mb-0">extra-time</p>
-            <p class="mb-0 text-light">${extraTimeResult}</p>
+            <p class="mb-0 text-light">${
+              extraTimeHome === null ? "-" : extraTimeHome
+            }-${extraTimeAway === null ? "-" : extraTimeAway}</p>
           </div>
           <div class="result-penalty text-center text-capitalize">
             <p class="mb-0">penalty</p>
-            <p class="mb-0 text-light">${penaltiesResult}</p>
+            <p class="mb-0 text-light">${
+              penaltyHome === null ? "-" : penaltyHome
+            }-${penaltyAway === null ? "-" : penaltyAway}</p>
           </div>
           <div class="match-infos text-center text-capitalize">
             <p class="match-time mb-0">${matchTime}</p>
-            <p class="round mb-0">${stage}</p>
+            <p class="round mb-0">${round}</p>
+            <p class="round mb-0">${stadiumName}</p>
           </div>
         </div>
       `;

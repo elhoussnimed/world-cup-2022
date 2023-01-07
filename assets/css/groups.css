@@ -68,7 +68,7 @@ body {
 
 .groups .group .group-head .team-name,
 .groups .group .team .team-name {
-    width: 100px;
+    width: 155px;
     border-radius: 5px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -91,7 +91,7 @@ body {
 
     .groups .group .group-head .team-name,
     .groups .group .team .team-name {
-        width: 75px;
+        width: 140px;
         font-size: 14px;
     }
 
