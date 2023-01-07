@@ -11,7 +11,10 @@ async function getMatches() {
 
     const requestOptions = {
       method: "GET",
-      headers: requestHeaders,
+      headers: {
+        "X-RapidAPI-Key": "71a79fd775b0727d7373c87fee9da21c",
+        "X-RapidAPI-Host": "v3.football.api-sports.io",
+      },
       redirect: "follow",
     };
 
